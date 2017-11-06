@@ -6,7 +6,8 @@
     "commonjs": true
   },
   "globals": {
-    "Promise": true
+    "Promise": true,
+    "Buffer": true
   },
   "rules": {
     "camelcase": [2, {"properties": "never"}],

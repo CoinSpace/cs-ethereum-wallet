@@ -1,0 +1,12 @@
+{
+  "privateKey": "0xdd440046e5eb40de6cf06081c827dceb1aaf8794c030ac7e7b9bec505768750c",
+  "networkName": "ethereum",
+  "balance": 0,
+  "confirmedBalance": 0,
+  "historyTxs": [],
+  "txsCount": 0,
+  "addressString": "0xae4eef8f49928fa130de2ddce42a2aa91738b54c",
+  "gasPrice": "4000000000",
+  "gasLimit": "21000",
+  "minConf": 12
+}
