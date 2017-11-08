@@ -35,4 +35,12 @@ describe('Ethereum Wallet', function() {
     });
   });
 
+  describe('exportPrivateKeys', function() {
+    it('works', function() {
+      var csv = readOnlyWallet.exportPrivateKeys();
+      assert.equal(typeof csv, 'string');
+      assert(csv.length > 0);
+    });
+  });
+
 });
