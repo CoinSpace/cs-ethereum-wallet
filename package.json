@@ -23,7 +23,7 @@
     "ethereumjs-wallet": "^0.6.0"
   },
   "devDependencies": {
-    "eslint": "^2.13.1",
+    "eslint": "^4.19.1",
     "mocha": "^7.0.0"
   }
 }
