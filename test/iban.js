@@ -1,14 +1,14 @@
 'use strict';
 
-var Iban = require('../lib/iban');
-var assert = require('assert');
+const Iban = require('../lib/iban');
+const assert = require('assert');
 
-describe('iban', function() {
-  var ibanFixture = 'XE567GMDI1I6D0C818UK1PFR4T4URDRD2SX';
-  var ibanSecondFixture = 'XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS';
-  var ibanIncorrectFixture = 'XE567GMDI2I6D0C818UK1PFR4T4URDRD2SX';
+describe('iban', () => {
+  const ibanFixture = 'XE567GMDI1I6D0C818UK1PFR4T4URDRD2SX';
+  const ibanSecondFixture = 'XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS';
+  const ibanIncorrectFixture = 'XE567GMDI2I6D0C818UK1PFR4T4URDRD2SX';
 
-  it('should validate', function() {
+  it('should validate', () => {
     assert.equal(Iban.isValid(ibanFixture), true);
     assert.equal(Iban.isValid(ibanIncorrectFixture), false);
     assert.equal(Iban.isValid(''), false);
@@ -19,8 +19,8 @@ describe('iban', function() {
     assert.equal(Iban.isValid(undefined), false);
   });
 
-  it('should create ETH address', function() {
-    var address = new Iban(ibanFixture).address();
+  it('should create ETH address', () => {
+    let address = new Iban(ibanFixture).address();
     assert.equal(address, '0x3fe0de839ae303070a9a537c5494195e40e1ce71');
 
     address = new Iban(ibanSecondFixture).address();
