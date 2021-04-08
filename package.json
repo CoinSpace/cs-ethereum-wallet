@@ -1,6 +1,6 @@
 {
   "name": "@coinspace/cs-ethereum-wallet",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "repository": "https://github.com/CoinSpace/cs-ethereum-wallet",
   "description": "",
   "main": "index.js",
