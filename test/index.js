@@ -16,7 +16,7 @@ describe('Ethereum Wallet', () => {
   });
 
   it('should have more tests', () => {
-    assert.equal('hi', 'hi');
+    assert.strictEqual('hi', 'hi');
   });
 
   describe('constructor', () => {
@@ -26,7 +26,7 @@ describe('Ethereum Wallet', () => {
         seed: RANDOM_SEED,
       });
       assert.ok(wallet);
-      assert.equal(wallet.isLocked, false);
+      assert.strictEqual(wallet.isLocked, false);
     });
 
     it('with publicKey', () => {
@@ -34,8 +34,8 @@ describe('Ethereum Wallet', () => {
         networkName: 'ethereum',
         publicKey: readOnlyWallet.etherWallet.pubKey.toString('hex'),
       });
-      assert.equal(wallet.addressString, readOnlyWallet.addressString);
-      assert.equal(wallet.isLocked, true);
+      assert.strictEqual(wallet.addressString, readOnlyWallet.addressString);
+      assert.strictEqual(wallet.isLocked, true);
       assert.ok(wallet);
     });
   });
@@ -46,10 +46,10 @@ describe('Ethereum Wallet', () => {
         networkName: 'ethereum',
         seed: RANDOM_SEED,
       });
-      assert.equal(wallet.isLocked, false);
+      assert.strictEqual(wallet.isLocked, false);
       wallet.lock();
-      assert.equal(wallet.etherWallet._privKey, null);
-      assert.equal(wallet.isLocked, true);
+      assert.strictEqual(wallet.etherWallet._privKey, null);
+      assert.strictEqual(wallet.isLocked, true);
     });
   });
 
@@ -59,10 +59,10 @@ describe('Ethereum Wallet', () => {
         networkName: 'ethereum',
         publicKey: RANDOM_SEED_PUB_KEY,
       });
-      assert.equal(wallet.isLocked, true);
+      assert.strictEqual(wallet.isLocked, true);
       wallet.unlock(RANDOM_SEED);
       assert.ok(wallet.etherWallet.privKey.toString('hex'));
-      assert.equal(wallet.isLocked, false);
+      assert.strictEqual(wallet.isLocked, false);
     });
   });
 
@@ -87,14 +87,14 @@ describe('Ethereum Wallet', () => {
         publicKey,
       });
       secondWalet.unlock(RANDOM_SEED);
-      assert.equal(wallet.etherWallet.privKey.toString('hex'), secondWalet.etherWallet.privKey.toString('hex'));
-      assert.equal(wallet.addressString, secondWalet.addressString);
+      assert.strictEqual(wallet.etherWallet.privKey.toString('hex'), secondWalet.etherWallet.privKey.toString('hex'));
+      assert.strictEqual(wallet.addressString, secondWalet.addressString);
     });
   });
 
   describe('serialization & deserialization', () => {
     it('works', () => {
-      assert.deepEqual(fixtures, JSON.parse(readOnlyWallet.serialize()));
+      assert.deepStrictEqual(fixtures, JSON.parse(readOnlyWallet.serialize()));
     });
   });
 
@@ -104,7 +104,7 @@ describe('Ethereum Wallet', () => {
         '0xdd440046e5eb40de6cf06081c827dceb1aaf8794c030ac7e7b9bec505768750c'
       );
       assert(privateKey instanceof Buffer);
-      assert.equal(privateKey.length, 32);
+      assert.strictEqual(privateKey.length, 32);
     });
 
     it('errors on invalid private key', ()=> {
@@ -115,7 +115,7 @@ describe('Ethereum Wallet', () => {
   describe('exportPrivateKeys', () => {
     it('works', () => {
       const csv = readOnlyWallet.exportPrivateKeys();
-      assert.equal(typeof csv, 'string');
+      assert.strictEqual(typeof csv, 'string');
       assert(csv.length > 0);
     });
   });
