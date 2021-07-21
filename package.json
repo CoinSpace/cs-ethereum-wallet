@@ -2,7 +2,9 @@
   "name": "@coinspace/cs-ethereum-wallet",
   "version": "1.4.4",
   "repository": "https://github.com/CoinSpace/cs-ethereum-wallet",
-  "description": "",
+  "description": "Ethereum Wallet for Coin app",
+  "author": "Coin Crypto Wallet <support@coin.space> (https://coin.space/)",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "lint": "eslint lib test index.js",
@@ -13,8 +15,6 @@
       "envify"
     ]
   },
-  "author": "Nikita Verkhovin <vernik91@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "axios": "^0.19.0",
     "axios-retry": "^3.1.2",
