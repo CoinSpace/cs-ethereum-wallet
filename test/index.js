@@ -22,7 +22,9 @@ describe('Ethereum Wallet', () => {
   describe('constructor', () => {
     it('with seed', () => {
       const wallet = new Wallet({
-        networkName: 'ethereum',
+        crypto: {
+          platform: 'ethereum',
+        },
         seed: RANDOM_SEED,
       });
       assert.ok(wallet);
@@ -31,7 +33,9 @@ describe('Ethereum Wallet', () => {
 
     it('with publicKey', () => {
       const wallet = new Wallet({
-        networkName: 'ethereum',
+        crypto: {
+          platform: 'ethereum',
+        },
         publicKey: readOnlyWallet.etherWallet.pubKey.toString('hex'),
       });
       assert.strictEqual(wallet.addressString, readOnlyWallet.addressString);
@@ -43,7 +47,9 @@ describe('Ethereum Wallet', () => {
   describe('lock', () => {
     it('works', () => {
       const wallet = new Wallet({
-        networkName: 'ethereum',
+        crypto: {
+          platform: 'ethereum',
+        },
         seed: RANDOM_SEED,
       });
       assert.strictEqual(wallet.isLocked, false);
@@ -56,7 +62,9 @@ describe('Ethereum Wallet', () => {
   describe('unlock', () => {
     it('works', () => {
       const wallet = new Wallet({
-        networkName: 'ethereum',
+        crypto: {
+          platform: 'ethereum',
+        },
         publicKey: RANDOM_SEED_PUB_KEY,
       });
       assert.strictEqual(wallet.isLocked, true);
@@ -69,7 +77,9 @@ describe('Ethereum Wallet', () => {
   describe('publicKey', () => {
     it('works', () => {
       const wallet = new Wallet({
-        networkName: 'ethereum',
+        crypto: {
+          platform: 'ethereum',
+        },
         seed: RANDOM_SEED,
       });
       const publicKey = wallet.publicKey();
@@ -78,12 +88,16 @@ describe('Ethereum Wallet', () => {
 
     it('key is valid', () => {
       const wallet = new Wallet({
-        networkName: 'ethereum',
+        crypto: {
+          platform: 'ethereum',
+        },
         seed: RANDOM_SEED,
       });
       const publicKey = wallet.publicKey();
       const secondWalet = new Wallet({
-        networkName: 'ethereum',
+        crypto: {
+          platform: 'ethereum',
+        },
         publicKey,
       });
       secondWalet.unlock(RANDOM_SEED);
