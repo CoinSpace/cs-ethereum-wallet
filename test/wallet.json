@@ -10,5 +10,6 @@
   "gasPrice": "4000000000",
   "gasLimit": "21000",
   "minConf": 12,
-  "chainId": 1
+  "chainId": 1,
+  "networkId": 1
 }
