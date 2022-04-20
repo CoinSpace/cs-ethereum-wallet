@@ -11,6 +11,9 @@ const defaultOptions = {
   crypto: {
     platform: 'ethereum',
   },
+  platformCrypto: {
+    _id: 'ethereum@ethereum',
+  },
   cache: { get: () => {}, set: () => {} },
 };
 
