@@ -1,3 +1,2 @@
-'use strict';
-
-module.exports = require('./lib/wallet');
+import Wallet from './lib/wallet.js';
+export default Wallet;

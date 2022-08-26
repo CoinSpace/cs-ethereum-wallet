@@ -1,7 +1,5 @@
-'use strict';
-
-const Iban = require('../lib/iban');
-const assert = require('assert');
+import Iban from '../lib/iban.js';
+import assert from 'assert';
 
 describe('iban', () => {
   const ibanFixture = 'XE567GMDI1I6D0C818UK1PFR4T4URDRD2SX';
