@@ -9,5 +9,6 @@
   "addressString": "0xae4eef8f49928fa130de2ddce42a2aa91738b54c",
   "gasLimit": "21000",
   "minConf": 12,
-  "chainId": 1
+  "chainId": 1,
+  "networkId": 1
 }
